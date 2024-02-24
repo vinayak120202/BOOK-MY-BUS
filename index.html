@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BookMyBus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;600;800&family=Poppins:wght@200;300;400;600;800;900&display=swap" rel="stylesheet">
+	<style type="text/css">
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            font-size: 18px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: 'poppins', sans-serif;
+            line-height: 1.5;
+        }
+        h1{
+            font-weight: 700;   
+        }
+        h2{
+            font-weight: 600;
+        }
+        h3{
+            font-weight: 300;
+        }
+        h3.social{
+            font-weight: 500;
+        }
+        h4{
+            font-size: 2.5rem;
+        }
+        ::placeholder{
+            color: rgb(224, 224, 224);
+        }
+        .main{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            gap: 30rem;
+            
+        }
+        .form{
+            background-image: url(images/bus\ bg.jpg);
+            background-size: 100%;;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            border: none;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            padding: 100px;
+            
+        }
+        .todo{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .off{
+            box-shadow: 0 0 10px 2px #2e2d2d3f;
+            transition: .5s;
+        }
+        .off:hover{
+            transform: scale(1.1);
+            z-index: 2;
+        }
+        img{
+            max-width: 100%;
+        }
+        .bus1{
+            width: 40%;
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+        }
+        form label{
+            color: rgb(226, 226, 226);
+            display: block;
+            text-transform: uppercase;
+            text-align: start;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: -.15rem;
+        }
+        form input{
+            background-color: #bbbbbb6f;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            color: #eaeaea;
+            font-weight: 400;
+            font-size: .90rem;
+        }
+        form input:focus{
+            outline: none;
+            background-color: #363636a1;
+        }
+        form button{
+            width: 100%;
+            cursor: pointer;
+        }
+        .btn{
+            background-image: linear-gradient(120deg, rgb(228, 172, 60), rgb(14, 220, 113));
+            border: none;
+            border-radius: 6px;
+            color: whitesmoke;
+            padding: .5rem 2rem;
+            font-weight: 600;
+            
+        }
+        .btn:hover{
+            background-image: none;
+            color: rgb(78, 78, 78);
+            border: 1px solid rgb(78, 78, 78);
+            cursor: pointer;
+        }
+        form .btn{
+            background-color: transparent;
+            border: 3px solid #ff8400;
+            color: #ff8400;
+            padding: .75rem 3rem;
+            font-weight: 800;
+            margin-left: 40px;
+
+        }
+        form .btn:hover{
+            background-image: none;
+            background-color: #272727c0;
+            border:3px solid #272727c0;
+            color: white;
+        }
+        .footer-row{
+            display: flex;
+            justify-content: space-evenly;
+            min-width: 1000px;
+            max-width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 30px;
+            
+        }
+        footer{
+            background-color: #282b2d;
+            bottom: 0;
+            width: 100%;
+            clear: both;
+            font-size: 14px;
+            font-weight: 200;
+            /* color: #e7e7e7; */
+        }
+        /* .img-cont{
+            width: 100%;
+            transition: 1s;
+        } */
+        #footersec{
+            font-family: 'Nunito';
+        }
+        .contact{
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: -1;
+        }
+        .contact-info{
+            text-align: center;
+            padding: 40px;
+        }
+        .social{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        a.rdc-footer-links{
+            display: flex;
+            flex-direction: column;
+            color: #e7e7e7ed;
+            font-weight: 600;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a.rdc-footer-links:hover{
+            color:rgba(168, 168, 168, 0.792);
+        }
+        .dib{
+            color: #dedede;
+            font-size: 1rem;
+            font-weight: 700;
+            /* display: flex; */
+        }
+        .rights{
+            color: #e7e7e7ed;
+        }
+        .last-line{
+            display: flex;
+            /* flex-wrap: 100px; */
+            justify-content: space-between;
+            gap: 100px;
+            
+        }
+        .dib-foot-wrapper{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .links-bus{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+        .advantages{
+            background-image: url(images/about.jpg);
+            background-size: 100% ;
+            color: #ffffffc5;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 50px;
+        }
+        .adv{
+            color: #fffffff0;
+            list-style: none;
+            text-align: center;
+            padding-left: 4rem;
+        }
+        .offer{
+            text-align: center;
+            padding: 40px;
+        }
+        .offer h2{
+            margin-bottom: .75rem;
+            color: #000000d5;
+        }
+        .offer h3{
+            margin-bottom: 1rem;
+            color: #6c6c6cd0;
+        }
+        .how{
+            text-align: start;
+            list-style-image: url(images/green-checkmark.svg);
+            list-style-position: inside;
+            padding: 50px 20px;
+        }
+        #submit{
+            background-image: linear-gradient(120deg, #dddddd5f, #404040,#dddddd5f);
+        }
+        
+	</style>
+</head>
+<body>
+
+    <div class="container" id="form">
+    
+        <div class="main">
+        <div class="logo"><a href="bookmybus.html">
+            <img src="images/bus logo 2.png" class="bus1"></a>
+        </div>
+        <div class="options">
+            <a href="signup.html" target="_blank"><button class="btn">SIGNUP/LOGIN</button></a>
+        </div>
+    </div>
+    <section class="form">
+    <form action="" method="post" class="form">
+        <div class="from" name="from">
+            <label for="From">From</label>
+            <!-- <input type="option" name="from" id="from" placeholder="Delhi"> -->
+            <input type="text" id="cities1" placeholder="Select City" list="cities" autofocus>
+            <datalist id="cities">
+                <option>Meerut</option><option>Noida</option><option>Dehradun</option><option>Amritsar</option><option>Ambedkar Nagar</option><option>Amroha</option>
+                <option>Delhi</option><option>Baghpat</option><option>Ballia</option><option>Balrampur</option><option>Bareilly</option><option>Bijnor</option>
+                <option>Agartala</option><option>Firozabad</option><option>Fatehpur</option><option>Faizabad</option><option>Chandauli</option><option>Bulandshahr</option>
+                <option>Agra</option><option>Gautam Buddha Nagar</option><option>Ghaziabad</option><option>Ghazipur</option><option>Gonda</option><option>Chitrakoot</option>
+                <option>Ahemdabad</option><option>Jhansi</option><option>Jaunpur</option><option>Hathras (Mahamaya Nagar)</option><option>Hardoi</option><option>Gorakhpur</option>
+                <option>Aizwal</option><option>Jyotiba Phule Nagar</option><option>Kannauj</option><option>Kanpur Nagar</option><option>Lalitpur</option><option>Kaushambi</option>
+                <option>Ajmer</option><option>Meerut</option><option>Mathura</option><option>Mainpuri</option><option>Maharajganj</option><option>Lucknow</option>
+                <option>Shamli</option><option>Pratapgarh</option><option>Panchsheel Nagar district (Hapur)</option><option>Muzaffarnagar</option><option>Moradabad</option><option>Mirzapur</option>
+                <option>Modinagar</option><option>Sant Ravidas Nagar</option><option>Sant Kabir Nagar</option><option>Saharanpur</option><option>Rampur</option><option>Raebareli</option>
+                <option>Jaipur</option><option>Sitapur</option><option>Siddharthnagar</option><option>Shravasti</option><option>Shamli</option><option>Shahjahanpur</option>
+                <option>Jodhpur</option><option>Haryana</option><option>Varanasi</option><option>Unnao</option><option>Sultanpur</option><option>Sonbhadra</option>
+                <option>Udaipur</option><option>Nagpur</option><option>Nasik</option><option>Banglore</option><option>Mysore</option><option>Kolkata</option>
+                <option>Bhopal</option><option>Bhubaneshwar</option><option>Cuttack</option><option>Indore</option><option>Damodar Valley</option><option>Shillong</option>
+                <option>Surat</option><option>Kanpur</option><option>Ludhiana</option><option>Rajkot</option><option>Gwaliar</option><option>Srinagar</option>
+            </datalist>
+        </input>
+        </div>
+        <div class="to" name="to">   
+            <label for="To">To</label>
+            <input type="text" id="cities1" placeholder="Select City" list="cities" autofocus></input>
+        </div>
+
+        <div class="date">    
+            <label for="Date">Date</label>
+            <input type="datetime-local" name="date" value="2023-01-01T18:00">
+        </div>
+
+        <div class="submit">    	
+            <a href="signup.html"><button class="btn" id="submit">Submit</button></a>
+        </div> 
+    </form></section>
+
+    <section class="how"><h1>HOW TO BOOK BUS ?</h1>
+    <ul class="steps">
+	    <li>First you have to enter the details about where are you from.</li>
+	    <li>After that you choose where you want to go.</li>
+	    <li>Then you choose the date on you wanted to go.</li>
+	    <li>Then enter the submit button.</li>
+        <li>HURRAY! YOU ARE GOOD TO GO...</li>
+    </ul>
+    </section>
+    <div class="offer">
+        <h2><u>Best Offers on Bus Booking</u></h2>
+        <h3>Get the finest deals on Bus Ticket booking</h3>
+            <div class="todo">
+            <div class="off"><a href=""><img src="images/refer and earn.jpg" ></a></div>
+            <div class="off"><a href=""><img src="images/cashback.jpg"></a></div>
+            <div class="off"><a href=""><img src="images/signup.jpeg"></a></div>
+
+            </div>	
+
+        
+    </div>    
+
+    <div class="advantages">
+        <h4>The advantages of booking online bus tickets with BookMyBus are as follows:</h4>
+        <ul class="adv">
+        <li>Get Best Offers, Discounts & Cashbacks</li>
+        <li>Get ₹250 on Sign Up</li>
+        <li>Get ₹200 On Every Referral</li>
+        <li>Free Travel Insurance up to ₹7.5 Lac</li>
+        <li>Zero Cancellation Charges with Instant Refund</li>
+        <li>Opt for a Carbon Neutral Ride</li>
+        <li>Access to Buses Premium Lounges</li>
+        <li>24X7 WhatsApp Support</li>
+        </ul>
+    </div></div>
+
+
+
+    <section class="contact-info">
+        <div class="social-info">
+                <h3 class="media-icons">Follow us on Social Media</h3>
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/login.php" target="_blank"><img src="images\icon-facebook.svg"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="images\icon-instagram.svg"></a></li>
+                    <li><a href="https://twitter.com/i/flow/login" target="_blank"><img src="images\icon-twitter.svg"></a></li>
+                </ul>
+                <div class="contact">
+                Phone: +91-9876543210
+                <p>Email: care@bookmybus.com</p>
+                </div>
+        </div>
+    </section>
+    <section id="footersec">
+
+    <footer>
+    
+    <div class="footer-row">
+        <div class="clearfix rest1 promotion main-body  animate">
+            <div class="links-bus">
+                    <div class="dib-foot-wrapper">
+                        <div class="row fl">
+                            <div class="dib">
+                                About BookMyBus
+                            </div>
+                                <a class="rdc-footer-links" href="" target="_blank">About Us</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Contact Us</a>
+                                <a class="rdc-footer-links" href="" target="_blank">BookMy Bus on Mobile</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Sitemap</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Offers</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Values</a>
+                        </div>
+                        <div class="row fl">
+                            <div class="dib">
+                                Info
+                            </div>
+                                <a class="rdc-footer-links" href="" target="_blank">T &amp; C</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Privacy Policy</a>
+                                <a class="rdc-footer-links" href="" target="_blank">FAQ</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Blog</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Insurance Partner</a>
+                                <a class="rdc-footer-links" href="" target="_blank">User Agreement</a>
+                        </div>
+                        <div class="row fl">
+                            <div class="dib">
+                                Global Sites
+                            </div>
+                                <a class="rdc-footer-links" href="http://127.0.0.1:5500/bookmybus.html" target="_blank">India</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Singapore</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Malaysia</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Indonesia</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Peru</a>
+                                <a class="rdc-footer-links" href="" target="_blank">Colombia</a>
+                        </div>
+                        <div class="row fl">
+                            <div class="dib">
+                                Our Partners
+                            </div>
+                                <a class="rdc-footer-links" href="https://www.goibibo.com/" target="_blank">Goibibo</a>
+                                <a class="rdc-footer-links" href="https://www.makemytrip.com/" target="_blank">Makemytrip</a>
+                                <div class="dib">
+                                     Other Services
+                                </div>
+                                    <a class="rdc-footer-links" href="https://www.irctc.co.in/nget/train-search" target="_blank">Train Tickets</a>
+                                    <a class="rdc-footer-links" href="https://www.redbus.in/bushire/" target="_blank">Bus Hire</a>
+                                    <a class="rdc-footer-links" href="https://www.olacabs.com/" target="_blank">Cab Booking</a>
+                        </div>
+                    </div>
+    
+                    <div class="rights-cont fr">
+                        <div class="img-cont">
+                            <a href="#form"><img src="images/bus logo 1.png"></a>
+                        </div>
+                    </div>      
+            </div>
+            <div class="last-line">
+                <p class="rights">&copy; 2022 All Right Reserved</p>
+                <a class="rdc-footer-links" href="">Register as Bus Agent</a>
+                <a class="rdc-footer-links" href="">Want to become an Operator?</a>
+            </div>
+        </div>
+    </div>
+    </footer>
+    </section>
+</body>
+</html>
